@@ -177,28 +177,10 @@ $purple: $third;
 $blue: $primary;
 $black: $copy;
 
-html {
-  height: 100%;
-  box-sizing: content-box;
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: content-box;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
   background: #fafafa;
-}
-
-#app {
-  font-family: "Avenirblack", "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $copy;
 }
 
 .logo {
