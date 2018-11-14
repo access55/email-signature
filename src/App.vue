@@ -173,20 +173,18 @@ $primary: #30a0e7;
 $copy: #2a3844;
 $secondary: #c7c4f8;
 $third: #665ef1;
-
-$green: #369662;
 $purple: $third;
 $blue: $primary;
 $black: $copy;
-$grey: #78909c;
 
 html {
   height: 100%;
   box-sizing: content-box;
+
   *,
   *:before,
   *:after {
-    box-sizing: inherit;
+    box-sizing: content-box;
   }
 }
 
