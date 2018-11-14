@@ -177,6 +177,17 @@ $purple: $third;
 $blue: $primary;
 $black: $copy;
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
