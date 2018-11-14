@@ -15,12 +15,7 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
+### Deploy
 ```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
+yarn run deploy
 ```
