@@ -12,6 +12,13 @@
     <noscript>
       <strong>We're sorry but signature doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("/email-signature/sw.js", {
+          scope: "/email-signature/"
+        });
+      }
+    </script>
     <div id="app"></div>
   </body>
 </html>

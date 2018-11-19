@@ -3,9 +3,6 @@ var VERSION = "version_01";
 var CACHE_NAME = APP_PREFIX + VERSION;
 var URLS = ["/email-signature/", "/email-signature/index.html"];
 
-/* eslint-disable-next-line */
-console.log("sw");
-
 self.addEventListener("fetch", function(e) {
   e.respondWith(
     caches.match(e.request).then(function(request) {
