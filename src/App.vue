@@ -1,10 +1,12 @@
 <template>
   <v-app class="signature">
     <v-content fill-height>
-      <access-logo class="logo" />
+      <div class="signature__header">
+        <access-logo class="logo" /><span>- Email Signature Creator</span>
+      </div>
       <v-container fluid>
-        <v-layout>
-          <v-flex sm4 pa-2>
+        <v-layout row wrap>
+          <v-flex xs12 md4 pa-2>
             <v-card class="elevation-1">
               <v-card-text>
                 <v-form>
@@ -25,13 +27,27 @@
                   ></v-text-field>
                   <v-text-field
                     tabindex="3"
+                    v-model="address"
+                    label="Address"
+                    autocomplete="new-address"
+                    type="text"
+                  ></v-text-field>
+                  <v-text-field
+                    tabindex="4"
+                    v-model="website"
+                    label="Website"
+                    autocomplete="new-site"
+                    type="text"
+                  ></v-text-field>
+                  <v-text-field
+                    tabindex="5"
                     v-model="phone1"
                     label="Phone #1"
                     autocomplete="new-phone1"
                     type="text"
                   ></v-text-field>
                   <v-text-field
-                    tabindex="4"
+                    tabindex="6"
                     v-model="phone2"
                     label="Phone #2"
                     autocomplete="new-phone2"
@@ -55,7 +71,7 @@
               </v-card-actions>
             </v-card>
           </v-flex>
-          <v-flex sm8 pa-2>
+          <v-flex xs12 md8 pa-2>
             <v-card class="elevation-1" height="100%">
               <div class="signature__source">
                 <div ref="sourceWrapper">
@@ -78,15 +94,32 @@
                       </td>
                       <td style="padding-left:10px;">
                         <span style="font-weight: bold; color: #2a3844;">
-                          {{ name || "John Doe" }}</span
+                          {{ name || "Rafael Abensur" }}</span
                         >
-                        <br />
+                        -
                         <span style="color: #78909c;">
-                          {{ title || "My great job title" }}</span
+                          {{ title || "Software Engineer" }}</span
+                        >
+                        <br v-if="address.trim().length" />
+                        <span
+                          v-if="address.trim().length"
+                          style="color: #2a3844;"
+                        >
+                          {{ address }}</span
+                        >
+                        <br v-if="website.trim().length" />
+                        <a
+                          v-if="website.trim().length"
+                          tabindex="-1"
+                          :href="website"
+                          style="color:#30a0e7;"
+                          target="_blank"
+                        >
+                          {{ website }}</a
                         >
                         <br />
                         <a tabindex="-1" :href="tel1" style="color:#30a0e7;">
-                          {{ phone1 || "98765 4321" }}</a
+                          {{ phone1 || "+55 11 956 376 187" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#999;">|&nbsp;</span
                         ><a tabindex="-1" :href="tel2" style="color:#30a0e7;">{{
@@ -103,13 +136,13 @@
       </v-container>
 
       <v-container fluid>
-        <v-layout>
-          <v-flex sm6 pa-2>
+        <v-layout row wrap>
+          <v-flex xs12 md6 pa-2>
             <v-card class="elevation-1 signature__step">
               <img src="@/assets/step1.gif" />
             </v-card>
           </v-flex>
-          <v-flex sm6 pa-2>
+          <v-flex xs12 md6 pa-2>
             <v-card class="elevation-1 signature__step">
               <img src="@/assets/step2.gif" />
             </v-card>
@@ -117,7 +150,7 @@
         </v-layout>
       </v-container>
     </v-content>
-    <v-snackbar timeout="1000" v-model="feedback" color="success">
+    <v-snackbar :timeout="1000" v-model="feedback" color="success">
       Copied!
     </v-snackbar>
   </v-app>
@@ -133,8 +166,9 @@ export default {
     feedback: false,
     name: "",
     title: "",
-    email: "",
-    phone1: "",
+    address: "Av. Angélica, 2529, Sala 03-111 - SP",
+    website: "https://www.access55.com",
+    phone1: "+55 11 956 376 187",
     phone2: ""
   }),
   computed: {
@@ -192,27 +226,42 @@ body {
   margin: 0;
   padding: 0;
   background: #fafafa;
-}
-
-.logo {
-  display: block;
-  margin: 40px auto 20px;
+  color: $copy;
 }
 
 .signature {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  &__output {
-    flex: 1;
+
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 40px;
+
+    span {
+      color: $copy;
+      font-family: "Open Sans";
+      font-weight: 600;
+      margin-left: 1rem;
+    }
+    svg {
+      width: calc(408px / 4);
+      height: calc(214px / 4);
+    }
   }
 
   &__source {
+    overflow: hidden;
     border: 2px dashed $secondary;
     height: 100%;
     display: flex;
     position: relative;
     > div {
       margin: auto;
+      min-width: 400px;
     }
   }
 
