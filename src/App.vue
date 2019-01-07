@@ -79,7 +79,7 @@
                     id="source"
                     cellpadding="0"
                     cellspacing="0"
-                    style="font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
+                    style="font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
                   >
                     <tr>
                       <td style="font-size:0px;">
@@ -88,22 +88,22 @@
                             src="https://ci4.googleusercontent.com/proxy/c_Tb8a8x3fwnjoZEMKdwCX13K9nxLbqhU3rofk7kL7hG6N2yqYpTCtmXvNK9sB6nhA32QJoxsjhdEiJ8-IPj_GTdymUQC5n1BaTviX3gd1kMNnk_Cweh-vVTBFu2yeFiPDuWyQ0tfg=s0-d-e1-ft#https://s3.amazonaws.com/dashboard-media-staging.access55.com/default/email_logo.png"
                             border="0"
                             width="100"
-                            style="padding-top: 8px;"
+                            style="padding-top: 0px;"
                           />
                         </a>
                       </td>
-                      <td style="padding-left:10px;">
-                        <span style="font-weight: bold; color: #2a3844;">
+                      <td style="padding-left:18px; padding-top: 8px;">
+                        <span style="font-weight: 700; color: #000;">
                           {{ name || "Rafael Abensur" }}</span
                         >
                         -
-                        <span style="color: #78909c;">
+                        <span style="font-weight: 400; color: #5b5b5f;">
                           {{ title || "Software Engineer" }}</span
                         >
                         <br v-if="address.trim().length" />
                         <span
                           v-if="address.trim().length"
-                          style="color: #2a3844;"
+                          style="color: #5b5b5f;"
                         >
                           {{ address }}</span
                         >
@@ -121,7 +121,7 @@
                         <a tabindex="-1" :href="tel1" style="color:#30a0e7;">
                           {{ phone1 || "+55 11 956 376 187" }}</a
                         >&nbsp;
-                        <span v-if="phone2" style="color:#999;">|&nbsp;</span
+                        <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
                         ><a tabindex="-1" :href="tel2" style="color:#30a0e7;">{{
                           phone2
                         }}</a>
