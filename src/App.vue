@@ -20,6 +20,14 @@
                   ></v-text-field>
                   <v-text-field
                     tabindex="2"
+                    v-model="email"
+                    label="Email"
+                    autocomplete="email"
+                    type="email"
+                  ></v-text-field>
+                  <v-switch v-model="showEmail" label="Show email?"></v-switch>
+                  <v-text-field
+                    tabindex="2"
                     v-model="title"
                     label="Job Title"
                     autocomplete="new-title"
@@ -82,18 +90,27 @@
                     style="font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
                   >
                     <tr>
-                      <td style="font-size:0px;">
-                        <a tabindex="-1" href="https://access55.com">
+                      <td style="font-size:0px; vertical-align: top;">
+                        <a tabindex="-1" href="https://a55.tech">
                           <img
                             src="https://ci4.googleusercontent.com/proxy/c_Tb8a8x3fwnjoZEMKdwCX13K9nxLbqhU3rofk7kL7hG6N2yqYpTCtmXvNK9sB6nhA32QJoxsjhdEiJ8-IPj_GTdymUQC5n1BaTviX3gd1kMNnk_Cweh-vVTBFu2yeFiPDuWyQ0tfg=s0-d-e1-ft#https://s3.amazonaws.com/dashboard-media-staging.access55.com/default/email_logo.png"
                             border="0"
                             width="100"
-                            style="padding-top: 0px;"
+                            height="53"
+                            style="padding-top: 4px;"
                           />
                         </a>
                       </td>
-                      <td style="padding-left:18px; padding-top: 8px;">
-                        <span style="font-weight: 700; color: #000;">
+                      <td style="vertical-align: top; padding-left: 18px;">
+                        <a
+                          v-if="!showEmail"
+                          tabindex="-1"
+                          :href="mail"
+                          style="text-decoration: none; font-weight: 700; color: #30a0e7;"
+                        >
+                          {{ name || "Rafael Abensur" }}
+                        </a>
+                        <span v-else style="font-weight: 700; color: #5b5b5f;">
                           {{ name || "Rafael Abensur" }}</span
                         >
                         -
@@ -117,6 +134,17 @@
                         >
                           {{ website }}</a
                         >
+                        <span v-if="showEmail && email.length"> | </span>
+                        <a
+                          v-if="showEmail"
+                          tabindex="-1"
+                          :href="mail"
+                          style="color:#30a0e7;"
+                          target="_blank"
+                        >
+                          {{ email }}</a
+                        >
+
                         <br />
                         <a tabindex="-1" :href="tel1" style="color:#30a0e7;">
                           {{ phone1 || "+55 11 956 376 187" }}</a
@@ -164,10 +192,12 @@ export default {
   },
   data: () => ({
     feedback: false,
+    showEmail: false,
     name: "",
     title: "",
+    email: "rafael@a55.tech",
     address: "Av. Angélica, 2529, Sala 03-111 - SP",
-    website: "https://www.access55.com",
+    website: "https://a55.tech",
     phone1: "+55 11 956 376 187",
     phone2: ""
   }),
@@ -177,6 +207,9 @@ export default {
     },
     tel2() {
       return `tel:${this.phone2.replace(/ /g, "").replace(/\D/g, "")}`;
+    },
+    mail() {
+      return `mailto:${this.email}`;
     }
   },
   mounted() {
