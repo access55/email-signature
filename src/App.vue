@@ -196,7 +196,7 @@ export default {
     name: "",
     title: "",
     email: "rafael@a55.tech",
-    address: "Av. Angélica, 2529, Sala 03-111 - SP",
+    address: "Alameda Santos 1773, 4º Andar - SP",
     website: "https://a55.tech",
     phone1: "+55 11 956 376 187",
     phone2: ""
