@@ -93,10 +93,10 @@
                       <td style="font-size:0px; vertical-align: top;">
                         <a tabindex="-1" href="https://a55.tech">
                           <img
-                            src="https://ci4.googleusercontent.com/proxy/c_Tb8a8x3fwnjoZEMKdwCX13K9nxLbqhU3rofk7kL7hG6N2yqYpTCtmXvNK9sB6nhA32QJoxsjhdEiJ8-IPj_GTdymUQC5n1BaTviX3gd1kMNnk_Cweh-vVTBFu2yeFiPDuWyQ0tfg=s0-d-e1-ft#https://s3.amazonaws.com/dashboard-media-staging.access55.com/default/email_logo.png"
+                            src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_137x60_2019.png"
                             border="0"
-                            width="100"
-                            height="53"
+                            width="137"
+                            height="60"
                             style="padding-top: 4px;"
                           />
                         </a>
@@ -106,7 +106,7 @@
                           v-if="!showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="text-decoration: none; font-weight: 700; color: #30a0e7;"
+                          style="text-decoration: none; font-weight: 700; color: #3f88c9;"
                         >
                           {{ name || "Rafael Abensur" }}
                         </a>
@@ -129,7 +129,7 @@
                           v-if="website.trim().length"
                           tabindex="-1"
                           :href="website"
-                          style="color:#30a0e7;"
+                          style="color:#3f88c9;"
                           target="_blank"
                         >
                           {{ website }}</a
@@ -139,14 +139,14 @@
                           v-if="showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="color:#30a0e7;"
+                          style="color:#3f88c9;"
                           target="_blank"
                         >
                           {{ email }}</a
                         >
 
                         <br />
-                        <a tabindex="-1" :href="tel1" style="color:#30a0e7;">
+                        <a tabindex="-1" :href="tel1" style="color:#3f88c9;">
                           {{ phone1 || "+55 11 956 376 187" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
@@ -236,7 +236,7 @@ export default {
 };
 </script>
 <style lang="scss">
-$primary: #30a0e7;
+$primary: #3f88c9;
 $copy: #2a3844;
 $secondary: #c7c4f8;
 $third: #665ef1;
