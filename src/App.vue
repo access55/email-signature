@@ -97,7 +97,7 @@
                             border="0"
                             width="99"
                             height="43"
-                            style="padding-top: 2px;"
+                            style="padding-top: 1px;"
                           />
                         </a>
                       </td>
@@ -106,7 +106,7 @@
                           v-if="!showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="text-decoration: none; font-weight: 700; color: #3f88c9;"
+                          style="text-decoration: none; font-weight: 700; color: #0096ff;"
                         >
                           {{ name || "Rafael Abensur" }}
                         </a>
@@ -114,13 +114,13 @@
                           {{ name || "Rafael Abensur" }}</span
                         >
                         -
-                        <span style="font-weight: 400; color: #5b5b5f;">
+                        <span style="font-weight: 400; color: #0096ff;">
                           {{ title || "Software Engineer" }}</span
                         >
                         <br v-if="address.trim().length" />
                         <span
                           v-if="address.trim().length"
-                          style="color: #5b5b5f;"
+                          style="color: #0096ff;"
                         >
                           {{ address }}</span
                         >
@@ -129,7 +129,7 @@
                           v-if="website.trim().length"
                           tabindex="-1"
                           :href="website"
-                          style="color:#3f88c9;"
+                          style="color:#0096ff;"
                           target="_blank"
                         >
                           {{ website }}</a
@@ -139,14 +139,14 @@
                           v-if="showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="color:#3f88c9;"
+                          style="color:#0096ff;"
                           target="_blank"
                         >
                           {{ email }}</a
                         >
 
                         <br />
-                        <a tabindex="-1" :href="tel1" style="color:#3f88c9;">
+                        <a tabindex="-1" :href="tel1" style="color:#0096ff;">
                           {{ phone1 || "+55 11 956 376 187" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
