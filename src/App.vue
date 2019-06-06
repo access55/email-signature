@@ -90,18 +90,18 @@
                     style="font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
                   >
                     <tr>
-                      <td style="font-size:0px; vertical-align: top;">
+                      <td style="font-size:0px; vertical-align: top; padding-top: 3px; padding-right: 10px; padding-bottom: 0px; padding-left: 5px;">
                         <a tabindex="-1" href="https://a55.tech">
                           <img
-                            src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_137x60_2019.png"
+                            src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_99x43_2019.png"
                             border="0"
-                            width="137"
-                            height="60"
-                            style="padding-top: 4px;"
+                            width="99"
+                            height="43"
+                            style="padding-top: 2px;"
                           />
                         </a>
                       </td>
-                      <td style="vertical-align: top; padding-left: 18px;">
+                      <td style="vertical-align: top; padding-left: 10px; border-style: solid; border-left-width: thin; border-top-width: 0; border-bottom-width: 0; border-right-width: 0; border-color: #818184;">
                         <a
                           v-if="!showEmail"
                           tabindex="-1"
@@ -305,7 +305,8 @@ body {
       width: 100%;
       height: auto;
       margin: auto;
-      padding: 4px 4px 0;
+      padding: 4px 4px;
+      
     }
   }
 }
