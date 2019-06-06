@@ -101,7 +101,7 @@
                           />
                         </a>
                       </td>
-                      <td style="vertical-align: top; padding-left: 10px; border-style: solid; border-left-width: thin; border-top-width: 0; border-bottom-width: 0; border-right-width: 0; border-color: #818184;">
+                      <td style="vertical-align: top; padding-left: 10px; border-style: solid; border-left-width: thin; border-top-width: 0px; border-bottom-width: 0px; border-right-width: 0px; border-color: #818184;">
                         <a
                           v-if="!showEmail"
                           tabindex="-1"
