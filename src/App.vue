@@ -106,21 +106,21 @@
                           v-if="!showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="text-decoration: none; font-weight: 700; color: #0096ff;"
+                          style="text-decoration: none; font-weight: 700; color: #3f88c9;"
                         >
                           {{ name || "Rafael Abensur" }}
                         </a>
-                        <span v-else style="font-weight: 700; color: #5b5b5f;">
+                        <span v-else style="font-weight: 700; color: #0096FF;">
                           {{ name || "Rafael Abensur" }}</span
                         >
                         -
-                        <span style="font-weight: 400; color: #0096ff;">
+                        <span style="font-weight: 400; color: #5b5b5f;">
                           {{ title || "Software Engineer" }}</span
                         >
                         <br v-if="address.trim().length" />
                         <span
                           v-if="address.trim().length"
-                          style="color: #0096ff;"
+                          style="color: #5b5b5f;"
                         >
                           {{ address }}</span
                         >
@@ -150,7 +150,7 @@
                           {{ phone1 || "+55 11 956 376 187" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
-                        ><a tabindex="-1" :href="tel2" style="color:#30a0e7;">{{
+                        ><a tabindex="-1" :href="tel2" style="color:#0096FF;">{{
                           phone2
                         }}</a>
                       </td>
