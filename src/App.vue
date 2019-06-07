@@ -90,27 +90,26 @@
                     style="font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
                   >
                     <tr>
-                      <td style="font-size:0px; vertical-align: top; padding-top: 3px; padding-right: 10px; padding-bottom: 0px; padding-left: 5px;">
+                      <td style="font-size:0px; vertical-align: top; padding-top: 3px; padding-right: 10px; padding-bottom: 0px; padding-left: 5px; border-style: solid; border-left-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-right-width: thin; border-color: #818184;">
                         <a tabindex="-1" href="https://a55.tech">
-                          <img
+                          <img 
                             src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_99x43_2019.png"
-                            border="0"
                             width="99"
                             height="43"
                             style="padding-top: 1px;"
                           />
                         </a>
                       </td>
-                      <td style="vertical-align: top; padding-left: 10px; border-style: solid; border-left-width: thin; border-top-width: 0px; border-bottom-width: 0px; border-right-width: 0px; border-color: #818184;">
+                      <td style="vertical-align: top; padding-left: 10px;">
                         <a
                           v-if="!showEmail"
                           tabindex="-1"
                           :href="mail"
-                          style="text-decoration: none; font-weight: 700; color: #3f88c9;"
+                          style="text-decoration: none; font-weight: 700; color: #0096ff;"
                         >
                           {{ name || "Rafael Abensur" }}
                         </a>
-                        <span v-else style="font-weight: 700; color: #0096FF;">
+                        <span v-else style="font-weight: 700; color: #5b5b5f;">
                           {{ name || "Rafael Abensur" }}</span
                         >
                         -
@@ -300,13 +299,12 @@ body {
 
   &__step {
     display: flex;
-
+    
     img {
       width: 100%;
       height: auto;
       margin: auto;
       padding: 4px 4px;
-      
     }
   }
 }
