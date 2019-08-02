@@ -17,50 +17,50 @@
                     label="Fullname"
                     autocomplete="new-name"
                     type="text"
-                  ></v-text-field>
+                  />
                   <v-text-field
                     tabindex="2"
                     v-model="email"
                     label="Email"
                     autocomplete="email"
                     type="email"
-                  ></v-text-field>
-                  <v-switch v-model="showEmail" label="Show email?"></v-switch>
+                  />
+                  <v-switch v-model="showEmail" label="Show email?" />
                   <v-text-field
                     tabindex="2"
                     v-model="title"
                     label="Job Title"
                     autocomplete="new-title"
                     type="text"
-                  ></v-text-field>
+                  />
                   <v-text-field
                     tabindex="3"
                     v-model="address"
                     label="Address"
                     autocomplete="new-address"
                     type="text"
-                  ></v-text-field>
+                  />
                   <v-text-field
                     tabindex="4"
                     v-model="website"
                     label="Website"
                     autocomplete="new-site"
                     type="text"
-                  ></v-text-field>
+                  />
                   <v-text-field
                     tabindex="5"
                     v-model="phone1"
                     label="Phone #1"
                     autocomplete="new-phone1"
                     type="text"
-                  ></v-text-field>
+                  />
                   <v-text-field
                     tabindex="6"
                     v-model="phone2"
                     label="Phone #2"
                     autocomplete="new-phone2"
                     type="text"
-                  ></v-text-field>
+                  />
                 </v-form>
               </v-card-text>
               <v-card-actions class="d-flex">
@@ -87,12 +87,33 @@
                     id="source"
                     cellpadding="0"
                     cellspacing="0"
-                    style="font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#37474f;text-align:left;line-height:20px;"
+                    style="
+                      font-family:'Open Sans', Helvetica, Arial, sans-serif;
+                      font-size:14px;
+                      font-weight:normal;
+                      color:#37474f;
+                      text-align:left;
+                      line-height:20px;
+                    "
                   >
                     <tr>
-                      <td style="font-size:0px; vertical-align: top; padding-top: 3px; padding-right: 10px; padding-bottom: 0px; padding-left: 5px; border-style: solid; border-left-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-right-width: thin; border-color: #818184;">
+                      <td
+                        style="
+                          font-size:0px;
+                          vertical-align: top;
+                          padding-top: 3px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 5px;
+                          border-style: solid;
+                          border-left-width: 0px;
+                          border-top-width: 0px;
+                          border-bottom-width: 0px;
+                          border-right-width: thin;
+                          border-color: #818184;"
+                      >
                         <a tabindex="-1" href="https://a55.tech">
-                          <img 
+                          <img
                             src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_99x43_2019.png"
                             width="99"
                             height="43"
@@ -146,7 +167,7 @@
 
                         <br />
                         <a tabindex="-1" :href="tel1" style="color:#0096ff;">
-                          {{ phone1 || "+55 11 956 376 187" }}</a
+                          {{ phone1 || "+55 11 3042 1575" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
                         ><a tabindex="-1" :href="tel2" style="color:#0096FF;">{{
@@ -197,7 +218,7 @@ export default {
     email: "rafael@a55.tech",
     address: "Alameda Santos 1773, 4º Andar - SP",
     website: "https://a55.tech",
-    phone1: "+55 11 956 376 187",
+    phone1: "+55 11 3042 1575",
     phone2: ""
   }),
   computed: {
@@ -299,7 +320,6 @@ body {
 
   &__step {
     display: flex;
-    
     img {
       width: 100%;
       height: auto;

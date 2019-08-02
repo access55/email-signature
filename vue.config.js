@@ -1,3 +1,3 @@
 module.exports = {
-  baseUrl: "email-signature/"
+  publicPath: "email-signature/"
 };
