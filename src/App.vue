@@ -167,7 +167,7 @@
 
                         <br />
                         <a tabindex="-1" :href="tel1" style="color:#0096ff;">
-                          {{ phone1 || "+55 11 3042 1575" }}</a
+                          {{ phone1 || "+55 11 3816-4757" }}</a
                         >&nbsp;
                         <span v-if="phone2" style="color:#5b5b5f;">|&nbsp;</span
                         ><a tabindex="-1" :href="tel2" style="color:#0096FF;">{{
@@ -216,9 +216,9 @@ export default {
     name: "",
     title: "",
     email: "rafael@a55.tech",
-    address: "Alameda Santos 1773, 4º Andar - SP",
+    address: "Rua Tavares Cabral, 102, 10º andar, Phineiros, CEP 05423-030",
     website: "https://a55.tech",
-    phone1: "+55 11 3042 1575",
+    phone1: "+55 11 3816-4757",
     phone2: ""
   }),
   computed: {
