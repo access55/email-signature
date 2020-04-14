@@ -216,7 +216,7 @@ export default {
     name: "",
     title: "",
     email: "rafael@a55.tech",
-    address: "Rua Tavares Cabral, 102, 10º andar, Phineiros, CEP 05423-030",
+    address: "Rua Tavares Cabral, 102, 10º andar, Pinheiros, CEP 05423-030",
     website: "https://a55.tech",
     phone1: "+55 11 3816-4757",
     phone2: ""
