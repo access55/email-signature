@@ -142,7 +142,7 @@
                           v-if="address.trim().length"
                           style="color: #5b5b5f;"
                         >
-                          {{ address }}</span
+                          <pre>{{ address }}</pre></span
                         >
                         <br v-if="website.trim().length" />
                         <a
@@ -216,7 +216,9 @@ export default {
     name: "",
     title: "",
     email: "rafael@a55.tech",
-    address: "Rua Tavares Cabral, 102, 10º andar, Pinheiros, CEP 05423-030",
+    // eslint-disable-next-line prettier/prettier
+    address:`Rua Tavares Cabral, 102, 10º andar
+Pinheiros, CEP 05423-030`,
     website: "https://a55.tech",
     phone1: "+55 11 3816-4757",
     phone2: ""
