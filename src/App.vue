@@ -33,12 +33,12 @@
                     autocomplete="new-title"
                     type="text"
                   />
-                  <v-text-field
+                  <v-textarea
                     tabindex="3"
                     v-model="address"
                     label="Address"
+                    rows="2"
                     autocomplete="new-address"
-                    type="text"
                   />
                   <v-text-field
                     tabindex="4"
@@ -128,21 +128,23 @@
                           :href="mail"
                           style="text-decoration: none; font-weight: 700; color: #0096ff;"
                         >
-                          {{ name || "Rafael Abensur" }}
+                          {{ name || "Maria Joana" }}
                         </a>
                         <span v-else style="font-weight: 700; color: #5b5b5f;">
-                          {{ name || "Rafael Abensur" }}</span
+                          {{ name || "Maria Joana" }}</span
                         >
                         -
                         <span style="font-weight: 400; color: #5b5b5f;">
-                          {{ title || "Software Engineer" }}</span
+                          {{ title || "Rocket Pilot" }}</span
                         >
                         <br v-if="address.trim().length" />
-                        <span
-                          v-if="address.trim().length"
-                          style="color: #5b5b5f;"
-                        >
-                          {{ address }}</span
+<span
+  v-if="address.trim().length"
+  style="
+    color: #5b5b5f;
+    white-space: pre;
+  "
+>{{ address }}</span
                         >
                         <br v-if="website.trim().length" />
                         <a
@@ -215,8 +217,9 @@ export default {
     showEmail: false,
     name: "",
     title: "",
-    email: "rafael@a55.tech",
-    address: "Rua Tavares Cabral, 102, 10º andar, Phineiros, CEP 05423-030",
+    email: "email@a55.tech",
+    address: `Rua Tavares Cabral, 102, 10º andar
+Pinheiros, CEP 05423-030`,
     website: "https://a55.tech",
     phone1: "+55 11 3816-4757",
     phone2: ""
