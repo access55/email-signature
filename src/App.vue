@@ -138,14 +138,8 @@
                           {{ title || "Rocket Pilot" }}</span
                         >
                         <br v-if="address.trim().length" />
-<span
-  v-if="address.trim().length"
-  style="
-    color: #5b5b5f;
-    white-space: pre;
-  "
->{{ address }}</span
-                        >
+                        <!-- eslint-disable-next-line -->
+                        <span v-if="address.trim().length" style="color: #5b5b5f; white-space: pre;">{{ address }}</span>
                         <br v-if="website.trim().length" />
                         <a
                           v-if="website.trim().length"
