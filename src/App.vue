@@ -216,7 +216,26 @@ export default {
 Pinheiros, CEP 05423-030`,
     website: "https://a55.tech",
     phone1: "+55 11 3816-4757",
-    phone2: ""
+    phone2: "",
+    showSocial: true,
+    socialText: "Follow us:",
+    social: [
+      {
+        url: "https://linkedin.com/company/a55/",
+        img: "https://cdn.svgporn.com/logos/facebook.svg"
+      },
+      {
+        url: "https://twitter.com/a55tech",
+        img: "https://cdn.svgporn.com/logos/twitter.svg"
+      },
+      {
+        url: "https://www.facebook.com/a55.tech/",
+        img: "https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
+      }
+    ],
+    showDisclaimer: true,
+    disclaimer:
+      "a55 partners with entrepreneurs of the digital economy to grow their sales through revenue-based capital and data.<br/>If you want to hear more about a55, follow our blog <a href='https://a55.tech/pt/blog/' target='_blank' title='Blog a55'>here</a>"
   }),
   computed: {
     tel1() {
