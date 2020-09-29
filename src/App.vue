@@ -1,66 +1,193 @@
 <template>
   <v-app class="signature">
-    <v-content fill-height>
+    <v-main fill-height>
       <div class="signature__header">
-        <access-logo class="logo" /><span>- Email Signature Creator</span>
+        <access-logo class="logo" />
+        <h1>Email Signature Creator</h1>
       </div>
       <v-container fluid>
         <v-layout row wrap>
-          <v-flex xs12 md4 pa-2>
+          <v-flex xs12 md6 pa-2>
             <v-card class="elevation-1">
               <v-card-text>
                 <v-form>
-                  <v-text-field
-                    ref="start"
-                    tabindex="1"
-                    v-model="name"
-                    label="Fullname"
-                    autocomplete="new-name"
-                    type="text"
-                  />
-                  <v-text-field
-                    tabindex="2"
-                    v-model="email"
-                    label="Email"
-                    autocomplete="email"
-                    type="email"
-                  />
-                  <v-switch v-model="showEmail" label="Show email?" />
-                  <v-text-field
-                    tabindex="2"
-                    v-model="title"
-                    label="Job Title"
-                    autocomplete="new-title"
-                    type="text"
-                  />
-                  <v-textarea
-                    tabindex="3"
-                    v-model="address"
-                    label="Address"
-                    rows="2"
-                    autocomplete="new-address"
-                  />
-                  <v-text-field
-                    tabindex="4"
-                    v-model="website"
-                    label="Website"
-                    autocomplete="new-site"
-                    type="text"
-                  />
-                  <v-text-field
-                    tabindex="5"
-                    v-model="phone1"
-                    label="Phone #1"
-                    autocomplete="new-phone1"
-                    type="text"
-                  />
-                  <v-text-field
-                    tabindex="6"
-                    v-model="phone2"
-                    label="Phone #2"
-                    autocomplete="new-phone2"
-                    type="text"
-                  />
+                  <v-row>
+                    <v-col cols="6">
+                      <v-text-field
+                        ref="start"
+                        tabindex="1"
+                        v-model="name"
+                        dense
+                        label="Full name"
+                        autocomplete="new-name"
+                        type="text"
+                      />
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                        tabindex="2"
+                        v-model="title"
+                        dense
+                        label="Job Title"
+                        autocomplete="new-title"
+                        type="text"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="8">
+                      <v-text-field
+                        tabindex="2"
+                        v-model="email"
+                        label="Email"
+                        autocomplete="email"
+                        type="email"
+                        dense
+                      />
+                    </v-col>
+                    <v-col cols="4">
+                      <v-switch dense v-model="showEmail" label="Explicit?" />
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col>
+                      <v-textarea
+                        dense
+                        tabindex="3"
+                        v-model="address"
+                        label="Address"
+                        rows="2"
+                        autocomplete="new-address"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col>
+                      <v-text-field
+                        dense
+                        tabindex="4"
+                        v-model="website"
+                        label="Website"
+                        autocomplete="new-site"
+                        type="text"
+                      />
+                    </v-col>
+                  </v-row>
+
+                  <v-row>
+                    <v-col cols="6">
+                      <v-text-field
+                        dense
+                        tabindex="5"
+                        v-model="phone1"
+                        label="Phone #1"
+                        autocomplete="new-phone1"
+                        type="text"
+                      />
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                        dense
+                        tabindex="6"
+                        v-model="phone2"
+                        label="Phone #2"
+                        autocomplete="new-phone2"
+                        type="text"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col cols="6">
+                      <v-switch
+                        dense
+                        v-model="showSocial"
+                        label="Show social medias?"
+                      />
+                    </v-col>
+                    <v-col cols="6" v-if="showSocial">
+                      <v-text-field
+                        dense
+                        v-model="socialText"
+                        label="Social media text"
+                        autocomplete="new-social-media-text"
+                        type="text"
+                      />
+                    </v-col>
+                  </v-row>
+                  <template v-if="showSocial">
+                    <v-row
+                      v-for="(media, index) in social"
+                      :key="index"
+                      class="signature__social-medias"
+                    >
+                      <v-col cols="5">
+                        <v-text-field
+                          tabindex="6"
+                          v-model="social[index].url"
+                          label="URL"
+                          type="text"
+                          dense
+                        />
+                      </v-col>
+                      <v-col cols="5">
+                        <v-text-field
+                          dense
+                          tabindex="6"
+                          v-model="social[index].img"
+                          label="Img"
+                          type="text"
+                        />
+                      </v-col>
+                      <v-col cols="2">
+                        <div style="text-align: center;">
+                          <v-btn
+                            fab
+                            dark
+                            x-small
+                            color="error"
+                            @click="removeSocialMedia(index)"
+                            v-if="index < social.length - 1"
+                          >
+                            <v-icon dark>
+                              mdi-minus
+                            </v-icon>
+                          </v-btn>
+                          <v-btn
+                            @click="addSocialMedia"
+                            fab
+                            dark
+                            x-small
+                            color="primary"
+                            v-else
+                          >
+                            <v-icon dark>
+                              mdi-plus
+                            </v-icon>
+                          </v-btn>
+                        </div>
+                      </v-col>
+                    </v-row>
+                  </template>
+                  <v-row>
+                    <v-col>
+                      <v-switch
+                        dense
+                        v-model="showDisclaimer"
+                        label="Show disclaimer?"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-row v-if="showDisclaimer">
+                    <v-col>
+                      <v-textarea
+                        dense
+                        v-model="disclaimer"
+                        label="Disclaimer (HTML)"
+                        rows="2"
+                        autocomplete="new-disclaimer"
+                      />
+                    </v-col>
+                  </v-row>
                 </v-form>
               </v-card-text>
               <v-card-actions class="d-flex">
@@ -79,7 +206,7 @@
               </v-card-actions>
             </v-card>
           </v-flex>
-          <v-flex xs12 md8 pa-2>
+          <v-flex xs12 md6 pa-2>
             <v-card class="elevation-1" height="100%">
               <div class="signature__source">
                 <div ref="sourceWrapper">
@@ -169,6 +296,38 @@
                         ><a tabindex="-1" :href="tel2" style="color:#0096FF;">{{
                           phone2
                         }}</a>
+
+                        <template v-if="showSocial">
+                          <br />
+                          <br />
+                          <span
+                            v-if="socialText.trim().length"
+                            style="color: #5b5b5f; white-space: pre; font-size: 15px; font-weight: bold;"
+                            >{{ socialText }}</span
+                          >
+                          <a
+                            v-for="(item, index) in social"
+                            :href="item.url"
+                            target="_blank"
+                            style="color:#0096ff; margin-right: 10px"
+                            :key="index"
+                          >
+                            <img
+                              :src="item.img"
+                              :alt="item.url"
+                              width="16px"
+                              height="16px"
+                            />
+                          </a>
+                        </template>
+                        <template v-if="showDisclaimer">
+                          <br />
+                          <br />
+                          <div
+                            v-html="disclaimer"
+                            style="color: #5b5b5f; line-height: 1.5;"
+                          />
+                        </template>
                       </td>
                     </tr>
                   </table>
@@ -193,7 +352,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-main>
     <v-snackbar :timeout="1000" v-model="feedback" color="success">
       Copied!
     </v-snackbar>
@@ -203,6 +362,9 @@
 import AccessLogo from "@/components/Logo";
 import Clipboard from "clipboard";
 export default {
+  props: {
+    source: String
+  },
   components: {
     AccessLogo
   },
@@ -218,7 +380,7 @@ Pinheiros, CEP 05423-030`,
     phone1: "+55 11 3816-4757",
     phone2: "",
     showSocial: true,
-    socialText: "Follow us:",
+    socialText: "Follow us:  ",
     social: [
       {
         url: "https://linkedin.com/company/a55/",
@@ -255,7 +417,7 @@ Pinheiros, CEP 05423-030`,
 
     const signatureHTMLClipboard = new Clipboard(".js-copy-src", {
       text: () => {
-        return this.$refs.sourceWrapper.innerHTML;
+        return this.$refs.sourceWrapper?.innerHTML;
       }
     });
 
@@ -266,8 +428,16 @@ Pinheiros, CEP 05423-030`,
       this.feedback = true;
     });
   },
-  props: {
-    source: String
+  methods: {
+    addSocialMedia() {
+      this.social.push({
+        url: "",
+        img: ""
+      });
+    },
+    removeSocialMedia(index) {
+      this.social.splice(index, 1);
+    }
   }
 };
 </script>
@@ -303,18 +473,25 @@ body {
   max-width: 960px;
   margin: 0 auto;
 
+  .v-input--switch {
+    margin-top: 0;
+  }
+
   &__header {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 40px;
+    margin-top: 20px;
 
-    span {
+    h1 {
       color: $copy;
       font-family: "Open Sans";
       font-weight: 600;
-      margin-left: 1rem;
+      font-size: 20px;
+      line-height: 2;
+      flex: 0 100%;
+      text-align: center;
     }
     svg {
       width: calc(408px / 4);
