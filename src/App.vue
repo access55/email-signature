@@ -384,15 +384,23 @@ Pinheiros, CEP 05423-030`,
     social: [
       {
         url: "https://linkedin.com/company/a55/",
-        img: "https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"
+        img:
+          "https://a55-cdn.s3-sa-east-1.amazonaws.com/SOCIAL+MEDIA/linkedin.png"
       },
       {
         url: "https://twitter.com/a55tech",
-        img: "https://cdn.svgporn.com/logos/twitter.svg"
+        img:
+          "https://a55-cdn.s3-sa-east-1.amazonaws.com/SOCIAL+MEDIA/twitter.png"
       },
       {
         url: "https://www.facebook.com/a55.tech/",
-        img: "https://cdn.svgporn.com/logos/facebook.svg"
+        img:
+          "https://a55-cdn.s3-sa-east-1.amazonaws.com/SOCIAL+MEDIA/facebook.png"
+      },
+      {
+        url: "https://www.instagram.com/a55.tech/",
+        img:
+          "https://a55-cdn.s3-sa-east-1.amazonaws.com/SOCIAL+MEDIA/instagram.png"
       }
     ],
     showDisclaimer: true,
