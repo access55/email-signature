@@ -302,7 +302,7 @@
                           <br />
                           <span
                             v-if="socialText.trim().length"
-                            style="color: #5b5b5f; white-space: pre; font-size: 15px; font-weight: bold;"
+                            style="color: #5b5b5f; white-space: pre; font-size: 10px; font-weight: bold;"
                             >{{ socialText }}</span
                           >
                           <a
@@ -325,7 +325,7 @@
                           <br />
                           <div
                             v-html="disclaimer"
-                            style="color: #5b5b5f; line-height: 1.5;"
+                            style="color: #5b5b5f; font-size: 10px; line-height: 1.5;"
                           />
                         </template>
                       </td>
