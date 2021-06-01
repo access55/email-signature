@@ -405,7 +405,7 @@ Pinheiros, CEP 05423-030`,
     ],
     showDisclaimer: true,
     disclaimer:
-      "a55 partners with entrepreneurs of the digital economy to grow their sales through revenue-based capital and data.<br/>If you want to hear more about a55, follow our blog <a href='https://a55.tech/pt/blog/' target='_blank' title='Blog a55'>here</a>"
+      "a55 partners with entrepreneurs of the digital economy to grow their sales through revenue-based capital and data.<br/>If you want to hear more about a55, follow our blog <a href='https://a55.tech/blog' target='_blank' title='Blog a55'>here</a>"
   }),
   computed: {
     tel1() {
