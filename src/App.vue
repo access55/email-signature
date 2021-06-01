@@ -241,10 +241,10 @@
                       >
                         <a tabindex="-1" href="https://a55.tech">
                           <img
-                            src="https://s3.amazonaws.com/dashboard-media-staging.access55.com/companies/a55/a55_logo_99x43_2019.png"
+                            src="https://a55-cdn.s3-sa-east-1.amazonaws.com/I%CC%81CONE+E+LOGO/LOGO/A55_AZUL.png"
                             width="99"
                             height="43"
-                            style="padding-top: 1px;"
+                            style="padding-top: 1px; width: 99px; height: 43px;"
                           />
                         </a>
                       </td>
